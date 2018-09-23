@@ -13,59 +13,59 @@ export class HeroBanner extends Component {
           <div className="hamburger_menu_content text-right">
             <ul className="menu_top_nav">
               <li className="menu_item has-children">
-                <a href="#">
+                <a >
                   usd
                   <i className="fa fa-angle-down" />
                 </a>
                 <ul className="menu_selection">
                   <li>
-                    <a href="#">cad</a>
+                    <a >cad</a>
                   </li>
                   <li>
-                    <a href="#">aud</a>
+                    <a >aud</a>
                   </li>
                   <li>
-                    <a href="#">eur</a>
+                    <a >eur</a>
                   </li>
                   <li>
-                    <a href="#">gbp</a>
+                    <a >gbp</a>
                   </li>
                 </ul>
               </li>
               <li className="menu_item has-children">
-                <a href="#">
+                <a >
                   English
                   <i className="fa fa-angle-down" />
                 </a>
                 <ul className="menu_selection">
                   <li>
-                    <a href="#">French</a>
+                    <a >French</a>
                   </li>
                   <li>
-                    <a href="#">Italian</a>
+                    <a >Italian</a>
                   </li>
                   <li>
-                    <a href="#">German</a>
+                    <a >German</a>
                   </li>
                   <li>
-                    <a href="#">Spanish</a>
+                    <a >Spanish</a>
                   </li>
                 </ul>
               </li>
               <li className="menu_item has-children">
-                <a href="#">
+                <a >
                   My Account
                   <i className="fa fa-angle-down" />
                 </a>
                 <ul className="menu_selection">
                   <li>
-                    <a href="#">
+                    <a >
                       <i className="fa fa-sign-in" aria-hidden="true" />
                       Sign In
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a >
                       <i className="fa fa-user-plus" aria-hidden="true" />
                       Register
                     </a>
@@ -73,16 +73,16 @@ export class HeroBanner extends Component {
                 </ul>
               </li>
               <li className="menu_item">
-                <a href="#">home</a>
+                <a >home</a>
               </li>
               <li className="menu_item">
                 <a href="categories.html">shop</a>
               </li>
               <li className="menu_item">
-                <a href="#">promotion</a>
+                <a >promotion</a>
               </li>
               <li className="menu_item">
-                <a href="#">pages</a>
+                <a >pages</a>
               </li>
               <li className="menu_item">
                 <a href="https://nordiccoder.com/blog" target="blank">
@@ -90,7 +90,7 @@ export class HeroBanner extends Component {
                 </a>
               </li>
               <li className="menu_item">
-                <a href="#">contact</a>
+                <a >contact</a>
               </li>
             </ul>
           </div>
@@ -106,7 +106,7 @@ export class HeroBanner extends Component {
                   <h6>Spring / Summer Collection 2017</h6>
                   <h1>Get up to 30% Off New Arrivals</h1>
                   <div className="red_button shop_now_button">
-                    <a href="#">shop now</a>
+                    <a >shop now</a>
                   </div>
                 </div>
               </div>

@@ -17,39 +17,39 @@ export class Header extends Component {
                   <div className="top_nav_right">
                     <ul className="top_nav_menu">
                       <li className="language">
-                        <a href="#">
+                        <a >
                           English
                           <i className="fa fa-angle-down" />
                         </a>
                         <ul className="language_selection">
                           <li>
-                            <a href="#">French</a>
+                            <a >French</a>
                           </li>
                           <li>
-                            <a href="#">Italian</a>
+                            <a >Italian</a>
                           </li>
                           <li>
-                            <a href="#">German</a>
+                            <a >German</a>
                           </li>
                           <li>
-                            <a href="#">Spanish</a>
+                            <a >Spanish</a>
                           </li>
                         </ul>
                       </li>
                       <li className="account">
-                        <a href="#">
+                        <a >
                           My Account
                           <i className="fa fa-angle-down" />
                         </a>
                         <ul className="account_selection">
                           <li>
-                            <a href="#">
+                            <a >
                               <i className="fa fa-sign-in" aria-hidden="true" />
                               Sign In
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a >
                               <i
                                 className="fa fa-user-plus"
                                 aria-hidden="true"
@@ -71,7 +71,7 @@ export class Header extends Component {
               <div className="row">
                 <div className="col-lg-12 text-right">
                   <div className="logo_container">
-                    <a href="#">
+                    <a >
                       Nordic
                       <span>Shop</span>
                     </a>
@@ -79,13 +79,13 @@ export class Header extends Component {
                   <nav className="navbar">
                     <ul className="navbar_menu">
                       <li>
-                        <a href="#">home</a>
+                        <a >home</a>
                       </li>
                       <li>
                         <a href="categories.html">shop</a>
                       </li>
                       <li>
-                        <a href="#">promotion</a>
+                        <a >promotion</a>
                       </li>
                       <li>
                         <a href="https://nordiccoder.com/blog" target="blank">
@@ -98,7 +98,7 @@ export class Header extends Component {
                     </ul>
                     <ul className="navbar_user">
                       <li className="checkout">
-                        <a href="#">
+                        <a >
                           <i
                             className="fa fa-shopping-cart"
                             aria-hidden="true"

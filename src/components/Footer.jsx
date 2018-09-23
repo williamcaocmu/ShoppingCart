@@ -16,7 +16,7 @@ export class Footer extends Component {
                       </a>
                     </li>
                     <li>
-                      <a href="#">FAQs</a>
+                      <a >FAQs</a>
                     </li>
                     <li>
                       <a href="contact.html">Contact us</a>
@@ -28,27 +28,27 @@ export class Footer extends Component {
                 <div className="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="fa fa-facebook" aria-hidden="true" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="fa fa-twitter" aria-hidden="true" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="fa fa-instagram" aria-hidden="true" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="fa fa-skype" aria-hidden="true" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="fa fa-pinterest" aria-hidden="true" />
                       </a>
                     </li>
@@ -62,7 +62,7 @@ export class Footer extends Component {
                   <div className="cr">
                     ©2018 All Rights Reserverd. This template is made with{" "}
                     <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}
-                    <a href="#">Colorlib</a>
+                    <a >Colorlib</a>
                   </div>
                 </div>
               </div>
