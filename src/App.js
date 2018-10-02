@@ -8,17 +8,14 @@ import DealOfWeekend from "./components/DealOfWeekend";
 import Shipping from "./components/Shipping";
 import HeroBanner from "./components/HeroBanner";
 import QuickCategoryBar from "./components/QuickCategoryBar";
+import ProductCategoryPage from "./Week4/components/ProductCategoryPage";
 
 class App extends Component {
   render() {
     return (
-      <div className="super_container">
+      <div>
         <Header />
-        <HeroBanner />
-        <QuickCategoryBar />
-        <NewArrivalBlock />
-        <DealOfWeekend />
-        <Shipping />
+        <ProductCategoryPage />
         <Footer />
       </div>
     );
