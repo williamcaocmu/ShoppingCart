@@ -3,14 +3,14 @@ import React, { Component } from "react";
 class PageNavigationBar extends Component {
   render() {
     return (
-      <div class="breadcrumbs d-flex flex-row align-items-center">
+      <div className="breadcrumbs d-flex flex-row align-items-center">
         <ul>
           <li>
             <a href="index.html">Home</a>
           </li>
-          <li class="active">
+          <li className="active">
             <a href="index.html">
-              <i class="fa fa-angle-right" aria-hidden="true" />
+              <i className="fa fa-angle-right" aria-hidden="true" />
               Men's
             </a>
           </li>
