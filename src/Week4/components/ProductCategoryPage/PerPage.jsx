@@ -1,25 +1,57 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getProdcuts } from "../productCategoryActions";
+
+const arrNum = [6, 12, 24];
 
 class PerPage extends Component {
+  state = {
+    selectedNum: null
+  };
+
+  renderList = list =>
+    list.length > 0
+      ? list.map(item => (
+          <li
+            onClick={() => {
+              this.setState(
+                {
+                  selectedNum: item
+                },
+                () => {
+                  const options = { limit: this.state.selectedNum };
+                  this.props.getProdcuts(options);
+                }
+              );
+            }}
+            key={item}
+            className="num_sorting_btn"
+          >
+            <span> {item} </span>
+          </li>
+        ))
+      : null;
+
   render() {
     return (
       <li>
-        <span> Show </span> <span class="num_sorting_text"> 6 </span>{" "}
-        <i class="fa fa-angle-down" />
-        <ul class="sorting_num">
-          <li class="num_sorting_btn">
-            <span> 6 </span>{" "}
-          </li>{" "}
-          <li class="num_sorting_btn">
-            <span> 12 </span>{" "}
-          </li>{" "}
-          <li class="num_sorting_btn">
-            <span> 24 </span>{" "}
-          </li>{" "}
-        </ul>{" "}
+        <span> Show </span>
+        <span className="num_sorting_text">
+          {" "}
+          {this.state.selectedNum}{" "}
+        </span>{" "}
+        <i className="fa fa-angle-down" />
+        <ul className="sorting_num">{this.renderList(arrNum)}</ul>
       </li>
     );
   }
 }
 
-export default PerPage;
+const mapStateToProps = state => {
+  return { products: state.category.products };
+};
+
+export default connect(
+  mapStateToProps,
+  { getProdcuts }
+)(PerPage);
