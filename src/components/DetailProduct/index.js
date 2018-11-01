@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import Single1_Thumb from "../../images/single_1_thumb.jpg";
-import Single2_Thumb from "../../images/single_2_thumb.jpg";
-import Single3_Thumb from "../../images/single_3_thumb.jpg";
 import Desc1 from "../../images/desc_1.jpg";
 import Desc2 from "../../images/desc_2.jpg";
 import Desc3 from "../../images/desc_3.jpg";
@@ -10,21 +7,33 @@ import AddToCart from "./AddToCart";
 import PreviewThumbnail from "./PreviewThumbnail";
 import PreviewViewer from "./PreviewViewer";
 import ProductDescription from "./ProductDescription";
+import { connect } from "react-redux";
+import { getProductById } from "./DetailProductAction";
+import __isEmpty from "lodash/isEmpty";
+import _get from "lodash/get";
 
 class DetailProduct extends Component {
   state = {
-    selectedPicture: Single1_Thumb,
+    selectedPicture: null,
     quantity: 1,
     price: 495.0,
     totalPrice: () => {
       return this.state.quantity * this.state.price;
     }
-   
   };
 
-  onSelect = picture => {
-    this.setState({ selectedPicture: picture });
+  handleSelect = picture => {
+    this.setState({ selectedPicture: picture }, () => {
+      console.log(picture);
+    });
   };
+
+  getSelectedImage() {
+    if (this.state.selectedPicture) {
+      return this.state.selectedPicture;
+    }
+    return _get(this.props, "product.images.0", "");
+  }
 
   add = () => {
     this.setState({ quantity: ++this.state.quantity });
@@ -36,9 +45,13 @@ class DetailProduct extends Component {
     }
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.getProductById(this.props.match.params.id);
+  }
 
   render() {
+    const { product } = this.props;
+
     return (
       <div>
         <div className="fs_menu_overlay" />
@@ -161,22 +174,28 @@ class DetailProduct extends Component {
               <div className="single_product_pics">
                 <div className="row">
                   <div className="col-lg-3 thumbnails_col order-lg-1 order-2">
-                    <PreviewThumbnail
-                      selectedPicture={this.state.selectedPicture}
-                      selectPicture={this.onSelect}
-                    />
+                    {!__isEmpty(product) && (
+                      <PreviewThumbnail
+                        product={product}
+                        onSelect={this.handleSelect}
+                        selectedPicture={this.getSelectedImage()}
+                      />
+                    )}
                   </div>
                   <div className="col-lg-9 image_col order-lg-2 order-1">
-                    <PreviewViewer
-                      selectedPicture={this.state.selectedPicture}
-                    />
+                    <PreviewViewer selectedPicture={this.getSelectedImage()} />
                   </div>
                 </div>
               </div>
             </div>
             <div className="col-lg-5">
               <div className="product_details">
-                <ProductDescription totalPrice={this.state.totalPrice} />
+                {!__isEmpty(product) && (
+                  <ProductDescription
+                    product={product}
+                    totalPrice={this.state.totalPrice}
+                  />
+                )}
                 <div className="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                   <QuantitySelection
                     minus={this.minus}
@@ -227,7 +246,7 @@ class DetailProduct extends Component {
                         </p>
                       </div>
                       <div className="tab_image">
-                        <img src={Desc1} alt />
+                        <img src={Desc1} alt="true" />
                       </div>
                       <div className="tab_text_block">
                         <h2>Pocket cotton sweatshirt</h2>
@@ -240,7 +259,7 @@ class DetailProduct extends Component {
                     </div>
                     <div className="col-lg-5 offset-lg-2 desc_col">
                       <div className="tab_image">
-                        <img src={Desc2} alt />
+                        <img src={Desc2} alt="true" />
                       </div>
                       <div className="tab_text_block">
                         <h2>Pocket cotton sweatshirt</h2>
@@ -251,7 +270,7 @@ class DetailProduct extends Component {
                         </p>
                       </div>
                       <div className="tab_image desc_last">
-                        <img src={Desc3} alt />
+                        <img src={Desc3} alt="true" />
                       </div>
                     </div>
                   </div>
@@ -444,7 +463,7 @@ class DetailProduct extends Component {
                   </div>
                   <div className="benefit_content">
                     <h6>free shipping</h6>
-                    <p>Suffered Alteration in Some Form</p>
+                    <p>Suffered alt="true"eration in Some Form</p>
                   </div>
                 </div>
               </div>
@@ -489,4 +508,17 @@ class DetailProduct extends Component {
   }
 }
 
-export default DetailProduct;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    product: state.selectedProduct.product
+  };
+};
+
+// DetailProduct.propTypes = {
+//   product: PropTypes.object.isRequired
+// };
+
+export default connect(
+  mapStateToProps,
+  { getProductById }
+)(DetailProduct);

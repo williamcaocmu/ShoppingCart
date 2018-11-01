@@ -1,26 +1,23 @@
 import React from "react";
-import Single1_Thumb from "../../images/single_1_thumb.jpg";
-import Single2_Thumb from "../../images/single_2_thumb.jpg";
-import Single3_Thumb from "../../images/single_3_thumb.jpg";
 
 const PreviewThumbnail = props => {
-  const list = [
-    { src: Single1_Thumb },
-    { src: Single2_Thumb },
-    { src: Single3_Thumb }
-  ];
+  const { image, images } = props.product;
   return (
     <div className="single_product_thumbnails">
       <ul>
-        {list.map((item, i) => (
+        <li
+          className={`${image === props.selectedPicture ? "active" : null}`}
+          onClick={() => props.onSelect(image)}
+        >
+          <img alt="true" src={image} />
+        </li>
+        {images.map((item, key) => (
           <li
-            className={`${
-              props.selectedPicture === item.src ? "active" : null
-            }`}
-            onClick={() => props.selectPicture(item.src)}
-            key={i}
+            className={`${item === props.selectedPicture ? "active" : null}`}
+            onClick={() => props.onSelect(item)}
+            key={key}
           >
-            <img alt="picture" src={item.src} />
+            <img alt="true" src={item} />
           </li>
         ))}
       </ul>

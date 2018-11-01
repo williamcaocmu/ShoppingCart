@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import NewArrivalBlock from "./components/NewArrivalBlock/NewArrivalBlock";
+import NewArrivalBlock from "./components/NewArrivalBlock/NewArrivalBlock";
 // import DealOfWeekend from "./components/DealOfWeekend";
 // import Shipping from "./components/Shipping";
 // import HeroBanner from "./components/HeroBanner";
@@ -18,6 +18,7 @@ class App extends Component {
       <div className="super_container">
         <Header />
         <Route exact path="/products" component={ProductCategoryPage} />
+        <Route exact path="/" component={NewArrivalBlock} />
         <Route exact path="/products/:id" component={DetailProduct} />
         <Footer />
       </div>

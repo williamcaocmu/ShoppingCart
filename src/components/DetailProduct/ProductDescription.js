@@ -1,7 +1,6 @@
 import React from "react";
 
 function ProductDescription(props) {
-  console.log(props.totalPrice());
   return (
     <div>
       <div className="product_details_title">
@@ -16,8 +15,12 @@ function ProductDescription(props) {
         <span className="ti-truck" />
         <span>free delivery</span>
       </div>
-      <div className="original_price">$629.99</div>
-      <div className="product_price">{props.totalPrice()}</div>
+      <div className="original_price">
+        ${parseFloat(props.product.originalPrice.toLocaleString()).toFixed(2)}
+      </div>
+      <div className="product_price">
+        ${parseFloat(props.totalPrice().toLocaleString()).toFixed(2)}
+      </div>
       <ul className="star_rating">
         <li>
           <i className="fa fa-star" aria-hidden="true" />

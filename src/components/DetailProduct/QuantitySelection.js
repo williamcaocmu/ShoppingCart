@@ -1,9 +1,8 @@
 import React from "react";
 
 const QuantitySelection = props => {
-  console.log(props);
   const { quantity, add, minus } = props;
-  const displayItem = quantity === 1 ? true : false;
+  // const displayItem = quantity === 1 ? true : false;
   return (
     <div style={{ display: "inline-block" }}>
       <span>Quantity:</span>

@@ -5,7 +5,7 @@ class ShortDescription extends Component {
     return (
       <div className="product_info">
         <h6 className="product_name">
-          <a>{this.props.description}</a>
+          <p>{this.props.description}</p>
         </h6>
         <div className="product_price">
           ${this.props.price}{" "}

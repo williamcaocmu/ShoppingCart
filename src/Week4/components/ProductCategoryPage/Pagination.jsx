@@ -24,7 +24,7 @@ export class Pagination extends Component {
           currentPage: current
         },
         () => {
-          let { limit, offset, skip, total } = pagination;
+          let { limit } = pagination;
           const option = { limit: "", skip: "" };
 
           option.limit = limit;
@@ -43,7 +43,7 @@ export class Pagination extends Component {
   }
 
   render() {
-    const { total, limit, offset, skip } = this.props.pagination;
+    const { total, limit } = this.props.pagination;
     const totalPage = +(Math.floor(total / limit) + 1);
 
     return (
